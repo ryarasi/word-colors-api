@@ -2,4 +2,4 @@ build:
   docker:
     web: /api/Dockerfile
 run:
-  web: python ./api/main.py
+  web: python main.py
