@@ -2,4 +2,4 @@ build:
   docker:
     web: /api/Dockerfile
 run:
-  web: uvicorn main:app --host web --port $PORT
+  web: python ./api/main.py
