@@ -2,4 +2,4 @@ build:
   docker:
     web: /api/Dockerfile
 run:
-  web: uvicorn API_Server:app --host api --port $PORT
+  web: uvicorn API_Server:app --host web --port $PORT
