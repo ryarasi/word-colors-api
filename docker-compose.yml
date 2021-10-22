@@ -4,7 +4,7 @@ services:
   db:
     image: "postgres:13-alpine"
     env_file:
-      - db.env
+      - .env
     volumes:
       - ./db_data/:/var/lib/postgresql/data/
     networks:
@@ -14,7 +14,7 @@ services:
   web:
     build: ./api/.
     env_file:
-      - api.env
+      - .env
     command: uvicorn API_Server:app --host web --port $PORT
     depends_on:
       - db
