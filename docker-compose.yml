@@ -11,11 +11,11 @@ services:
       - api_network
     restart: always
 
-  api:
+  web:
     build: ./api/.
     env_file:
       - api.env
-    command: uvicorn API_Server:app --host api --port 80
+    command: uvicorn API_Server:app --host web --port 80
     depends_on:
       - db
     networks:
@@ -28,7 +28,7 @@ services:
       - ./server/html_files/:/usr/share/nginx/html
     depends_on:
       - db
-      - api
+      - web
     networks:
       - api_network
     ports:
