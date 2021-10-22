@@ -15,7 +15,7 @@ services:
     build: ./api/.
     env_file:
       - .env
-    command: uvicorn API_Server:app --host web --port $PORT
+    command: uvicorn API_Server:app --host api --port $PORT
     depends_on:
       - db
     networks:
@@ -32,7 +32,7 @@ services:
     networks:
       - api_network
     ports:
-      - - ${PORT}:80
+      - ${PORT}:80
     restart: always
 
 networks:
