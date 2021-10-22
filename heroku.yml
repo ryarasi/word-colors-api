@@ -1,5 +1,3 @@
 build:
   docker:
-    web: /api/Dockerfile
-run:
-  web: uvicorn API_Server:app --host web --port $PORT
+    web: Dockerfile
