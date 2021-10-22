@@ -1,0 +1,20 @@
+{
+  "name": "shuddhi-api",
+  "version": "1.0.0",
+  "description": "The API of shuddhitrust.org",
+  "main": "index.js",
+  "scripts": {
+    "start": "docker-compose -f docker-compose-dev.yml up",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryarasi/starter-api.git"
+  },
+  "author": "Ragavendra Yarasi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryarasi/starter-api/issues"
+  },
+  "homepage": "https://github.com/ryarasi/starter-api#readme"
+}

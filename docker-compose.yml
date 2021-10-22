@@ -1,0 +1,40 @@
+version: "3"
+
+services:
+  db:
+    image: "postgres:13-alpine"
+    env_file:
+      - db.env
+    volumes:
+      - ./db_data/:/var/lib/postgresql/data/
+    networks:
+      - api_network
+    restart: always
+
+  api:
+    build: ./api/.
+    env_file:
+      - api.env
+    command: uvicorn API_Server:app --host api --port 80
+    depends_on:
+      - db
+    networks:
+      - api_network
+    restart: always
+
+  server:
+    build: ./server/.
+    volumes:
+      - ./server/html_files/:/usr/share/nginx/html
+    depends_on:
+      - db
+      - api
+    networks:
+      - api_network
+    ports:
+      - ${PORT}:80
+    restart: always
+
+networks:
+  api_network:
+    driver: bridge
