@@ -1,8 +1,11 @@
 from fastapi import FastAPI
 import uvicorn
+import os
 
 app = FastAPI()
 
+port = os.environ['PORT']
+reload = os.environ['RELOAD']
 
 @app.get('/')
 def Home():
@@ -10,4 +13,4 @@ def Home():
 
 
 if __name__ == "__main__":
-    uvicorn.run('main:app', port=8000, reload=False, root_path="/")
+    uvicorn.run('main:app', port=port, reload=reload, root_path="/")
