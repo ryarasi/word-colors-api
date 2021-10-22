@@ -4,8 +4,9 @@ import os
 
 app = FastAPI()
 
-port = os.environ['PORT']
-reload = os.environ['RELOAD']
+port = int(os.getenv('PORT', 8000))
+reload = bool(os.getenv('RELOAD', 1))
+
 
 @app.get('/')
 def Home():
@@ -13,4 +14,5 @@ def Home():
 
 
 if __name__ == "__main__":
+    print('port and reload from env', port, reload)
     uvicorn.run('main:app', port=port, reload=reload, root_path="/")
