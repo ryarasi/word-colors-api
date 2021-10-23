@@ -5,7 +5,7 @@ import os
 app = FastAPI()
 
 port = int(os.getenv('PORT', 8000))
-reload = bool(os.getenv('RELOAD', 1))
+reload = bool(os.getenv('RELOAD', 0))
 host = str(os.getenv('HOST','0.0.0.0'))
 
 
@@ -15,4 +15,7 @@ def Home():
 
 
 if __name__ == "__main__":
-    uvicorn.run('main:app', port=port, reload=reload, host=host, root_path="/")
+    print('port => ', port)
+    print('reload => ', reload)
+    print('host => ', host)
+    uvicorn.run('main:app', port=port, reload=reload, host=host)
