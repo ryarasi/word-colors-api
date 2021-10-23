@@ -14,4 +14,7 @@ def Home():
 
 
 if __name__ == "__main__":
-    uvicorn.run('main:app', port=port, reload=reload, host=host, root_path="/")
+    print('port => ', port)
+    print('reload => ', reload)
+    print('host => ', host)
+    uvicorn.run('main:app', port=port, reload=reload, host=host)
