@@ -10,9 +10,8 @@ reload = bool(os.getenv('RELOAD', 1))
 
 @app.get('/')
 def Home():
-    return "Service is Running...now"
+    return "Service is Running..."
 
 
 if __name__ == "__main__":
-    print('port and reload from env', port, reload)
     uvicorn.run('main:app', port=port, reload=reload, root_path="/")

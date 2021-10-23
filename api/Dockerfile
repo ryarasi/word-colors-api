@@ -1,9 +1,5 @@
 FROM python:3.7-slim
 
-# set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
-
 COPY ./requirements.txt /requirements.txt
 # create root directory for our project in the container
 RUN mkdir /api
