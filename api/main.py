@@ -14,8 +14,4 @@ def Home():
 
 
 if __name__ == "__main__":
-<<<<<<< HEAD
     uvicorn.run('main:app', port=port, reload=reload, host=host, root_path="/")
-=======
-    uvicorn.run('main:app', port=port, reload=reload, root_path="/")
->>>>>>> dev
