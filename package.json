@@ -4,7 +4,8 @@
   "description": "A quick boilerplate API using FastAPI with Postgres, Docker, NGINX",
   "scripts": {
     "build": "docker-compose -f docker-compose-dev.yml up --build",
-    "start": "docker-compose -f docker-compose-dev.yml up"
+    "start": "docker-compose -f docker-compose-dev.yml up",
+    "golive": "git checkout master && git merge dev && git push"
   },
   "repository": {
     "type": "git",
