@@ -6,20 +6,10 @@ services:
     env_file:
       - .env
     command: python main.py
-    networks:
-      - api_network
-    restart: always
-
-  server:
-    build: ./server/.
-    volumes:
-      - ./server/html_files/:/usr/share/nginx/html
-    depends_on:
-      - web
-    networks:
-      - api_network
     ports:
-      - 8000:80
+      - 8000:8000
+    networks:
+      - api_network
     restart: always
 
 networks:

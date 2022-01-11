@@ -12,8 +12,6 @@ services:
 
   server:
     build: ./server/.
-    volumes:
-      - ./server/html_files/:/usr/share/nginx/html
     depends_on:
       - web
     networks:
