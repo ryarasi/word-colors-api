@@ -1,10 +1,11 @@
 {
-  "name": "starter-api",
+  "name": "word-colors-api",
   "version": "1.0.0",
-  "description": "A quick boilerplate API using FastAPI with Postgres, Docker, NGINX",
+  "description": "A quick boilerplate API using FastAPI with Docker, NGINX",
   "scripts": {
     "build": "docker-compose -f docker-compose-dev.yml up --build",
     "start": "docker-compose -f docker-compose-dev.yml up",
+    "stop": "docker-compose -f docker-compose-dev.yml down",
     "golive": "git checkout master && git merge dev && git push && git checkout dev"
   },
   "repository": {

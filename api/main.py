@@ -12,6 +12,10 @@ host=str(os.getenv('HOST','0.0.0.0'))
 def Home():
     return "Service is Running..."
 
+@app.get('/images')
+def Images(query):
+    return "Here are the images for the query " + query
+
 
 if __name__ == "__main__":
     print('port => ', port)
