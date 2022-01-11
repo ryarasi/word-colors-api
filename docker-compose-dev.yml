@@ -3,9 +3,11 @@ version: "3"
 services:
   web:
     build: ./api/.
+    environment:
+      DEBUG: 1
     env_file:
       - .env
-    command: python main.py
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
     ports:
       - 8000:8000
     networks:
