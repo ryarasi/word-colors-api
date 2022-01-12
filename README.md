@@ -37,3 +37,13 @@ Link to UI code - https://github.com/ryarasi/word-colors
 - Make sure to populate it with the necessary API keys
 - Open your terminal and change directory to the project root folder and enter `npm start` to get started.
 - The API will be served and it can be accessed at `http://0.0.0.0:/8000`
+
+# How to deploy this to the cloud via Heroku
+
+- Create a [Heroku](https://heroku.com) account if you don't already have one.
+- Create a new project and go to the Deploy settings and connect it with the Git repo where this code exists
+- You can either set it to automatically deploy changes to a specific branch or trigger manual deploys
+- Once done, go to the settings page and add environment variables to the `Config Vars` section. Make sure to add all the variables in the `.env` file. Make srue that `RELOAD` is set to 0. It is 1 only for development environment.
+- Open a terminal and enter `heroku login` to login to the Heroku CLI. You may first need to install the Heroku CLI if you haven't already. [Instructions](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
+- Once logged in, enter `heroku stack:set container -a <your_heroku_app_name>`. This will enable the build and deployment of docker container in the repo.
+- Now you can manually trigger a deploy and have it publish in the app url.
